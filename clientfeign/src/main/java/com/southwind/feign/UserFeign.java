@@ -14,6 +14,12 @@ public interface UserFeign {
     @PostMapping("/user/save")
     public void save(@RequestBody User user);
 
+    @GetMapping("/user/findById/{id}")
+    public User findById(@PathVariable("id") long id);
+
+    @PutMapping("/user/update")
+    public void update(@RequestBody User user);
+
     @DeleteMapping("/user/deleteById/{id}")
     public void deleteById(@PathVariable("id") long id);
 }
